@@ -49,6 +49,17 @@ CSRF protections where applicable, rate limits, audit controls, secrets
 management, and secure deployment before any real use. Never use this mock
 auth mode or seed data with real customer information.
 
+## Deploy to Render
+
+The `render.yaml` Blueprint deploys a free web service with the mock identities
+and seed data enabled. It is a public educational demo, not a production banking
+service: anyone can act as either mock customer. Its SQLite database is stored
+in `/tmp` and is ephemeral, so data can reset when the service restarts.
+
+Create a new Blueprint in Render and select this GitHub repository. Agent chat
+is unavailable until `GEMINI_API_KEY` is added as a secret environment variable
+in the Render Dashboard. Do not put API keys in this repository.
+
 ## API examples
 
 Use `X-Mock-Customer-ID: customer-001` where the endpoint requires auth.
